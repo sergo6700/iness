@@ -74,8 +74,7 @@
         <div class="header-container">
             <div class="logo main-logo">
                 <a href="{{route('home')}}">
-                    <img class="dark-logo" src="{{asset('/img/logo-dark.png')}}" alt="" />
-                    <img class="light-logo" src="{{asset('/img/logo.png')}}" alt="" />
+                    <img class="light-logo" src="{{asset('/img/logo.png')}}" width="200" alt="" />
                 </a>
             </div>
 

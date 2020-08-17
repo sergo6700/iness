@@ -23,6 +23,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->bind(
+            'App\Contracts\CategoryControllerInterface',
+            'App\Services\CategoryControllerService'
+        );
+        $this->app->bind(
+            'App\Contracts\PostControllerInterface',
+            'App\Services\PostControllerService'
+        );
+        $this->app->bind(
+            'App\Contracts\TemplateInterface',
+            'App\Services\TemplateService'
+        );
+        $this->app->bind(
+            'App\Contracts\HomeControllerInterface',
+            'App\Services\HomeControllerService'
+        );
     }
 }

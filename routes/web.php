@@ -15,15 +15,23 @@ use Illuminate\Support\Facades\Route;
 
 //Auth::routes();
 Route::get('/login','Auth\LoginController@showLoginForm');
-Route::post('/login','Auth\LoginController@login');
+Route::post('/login','Auth\LoginController@login')->name('login');
 Route::post('/logout','Auth\LoginController@logout');
 
 Route::get('/', "AppController@home")->name('home');
 Route::get('/about', "AppController@about")->name('about');
 Route::get('/work', "AppController@work")->name('work');
 Route::get('/contact', "AppController@contact")->name('contact');
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->prefix('dashboard')->group(function () {
     Route::resource('','Admin\HomeController');
+    Route::resource('category', 'Admin\CategoryController');
+//    Route::resource('post', 'Admin\PostController');
+    Route::get('post', 'Admin\PostController@index')->name('post.index');
+    Route::get('post/create/{templateName}', 'Admin\PostController@create');
+    Route::post('post/store', 'Admin\PostController@store')->name('post.store');
+    Route::get('post/edit/{name}/{id}', 'Admin\PostController@edit')->name('post.edit');
+    Route::post('post/update/{id}', 'Admin\PostController@update')->name('post.update');
+    Route::delete('post/{id}', 'Admin\PostController@destroy')->name('post.update');
 });

@@ -18,13 +18,26 @@ class TemplateTableSeeder extends Seeder
                 [
                     'name' => 'template1',
                     'fields' => json_encode([
-                        'project_title',
-                        'project_image',
-                        'section_1_description',
-                        'section_1_video_image',
-                        'section_1_video_link',
-                        'section_2_description',
-                        'images',
+                        [
+                            'name' => 'section_1_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'section_1_video_image',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_1_video_link',
+                            'type' => 'text'
+                        ],
+                        [
+                            'name' => 'section_2_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'images',
+                            'type' => 'file'
+                        ]
                     ]),
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
@@ -32,17 +45,42 @@ class TemplateTableSeeder extends Seeder
                 [
                     'name' => 'template2',
                     'fields' => json_encode([
-                        'project_title',
-                        'project_image',
-                        'link',
-                        'section_1_image',
-                        'section_1_description',
-                        'section_2_image',
-                        'section_2_description',
-                        'report_text',
-                        'report_owner',
-                        'report_owner_image',
-                        'gif',
+                        [
+                            'name' => 'link',
+                            'type' => 'text'
+                        ],
+                        [
+                            'name' => 'section_1_image',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_1_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'section_2_image',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_2_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'report_text',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'report_owner',
+                            'type' => 'text'
+                        ],
+                        [
+                            'name' => 'report_owner_image',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'gif',
+                            'type' => 'file'
+                        ]
                     ]),
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
@@ -50,12 +88,23 @@ class TemplateTableSeeder extends Seeder
                 [
                     'name' => 'template3',
                     'fields' => json_encode([
-                        'project_title',
-                        'project_image',
-                        'section_1_description',
-                        'section_1_image',
-                        'section_2_description',
-                        'section_2_image',
+
+                        [
+                            'name' => 'section_1_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'section_1_image',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_2_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'section_2_image',
+                            'type' => 'file'
+                        ]
                     ]),
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
@@ -63,13 +112,27 @@ class TemplateTableSeeder extends Seeder
                 [
                     'name' => 'template4',
                     'fields' => json_encode([
-                        'project_title',
-                        'project_image',
-                        'link',
-                        'section_1_description tine mce',
-                        'section_1_images',
-                        'section_2_description tine mce',
-                        'section_2_images',
+
+                        [
+                            'name' => 'link',
+                            'type' => 'text'
+                        ],
+                        [
+                            'name' => 'section_1_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'section_1_images',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_2_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'section_2_images',
+                            'type' => 'file'
+                        ],
                     ]),
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
@@ -77,13 +140,27 @@ class TemplateTableSeeder extends Seeder
                 [
                     'name' => 'template5',
                     'fields' => json_encode([
-                        'project_title',
-                        'project_image',
-                        'section_1_descrition tine mce',
-                        'link',
-                        'section_1_images',
-                        'section_2_description',
-                        'section_2_image',
+
+                        [
+                            'name' => 'section_1_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'link',
+                            'type' => 'text'
+                        ],
+                        [
+                            'name' => 'section_1_images',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_2_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'section_2_image',
+                            'type' => 'file'
+                        ],
                     ]),
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
@@ -91,9 +168,18 @@ class TemplateTableSeeder extends Seeder
                 [
                     'name' => 'template6',
                     'fields' => json_encode([
-                        'project_title',
-                        'project_image',
-                        'images',
+                        [
+                            'name' => 'project_title',
+                            'type' => 'text'
+                        ],
+                        [
+                            'name' => 'project_image',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'images',
+                            'type' => 'file'
+                        ]
                     ]),
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
@@ -101,15 +187,35 @@ class TemplateTableSeeder extends Seeder
                 [
                     'name' => 'template7',
                     'fields' => json_encode([
-                        'project_title',
-                        'project_image',
-                        'section_1_description',
-                        'link',
-                        'section_1_image',
-                        'section_2_image',
-                        'section_3_description',
-                        'section_3_image',
-                        'section_4_image',
+                        [
+                            'name' => 'link',
+                            'type' => 'text'
+                        ],
+                        [
+                            'name' => 'section_1_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'section_1_image',
+                            'type' => 'file'
+                        ],
+
+                        [
+                            'name' => 'section_2_image',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_3_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'section_3_images',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_4_images',
+                            'type' => 'file'
+                        ],
                     ]),
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
@@ -117,10 +223,18 @@ class TemplateTableSeeder extends Seeder
                 [
                     'name' => 'template8',
                     'fields' => json_encode([
-                        'project_title',
-                        'project_video',
-                        'description',
-                        'images',
+                        [
+                            'name' => 'project_video',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'images',
+                            'type' => 'file'
+                        ],
                     ]),
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
@@ -128,17 +242,46 @@ class TemplateTableSeeder extends Seeder
                 [
                     'name' => 'template9',
                     'fields' => json_encode([
-                        "project_title",
-                        "project_image",
-                        "link",
-                        "section_1_description",
-                        "section_1_images",
-                        "section_2_description",
-                        "section_2_video_image",
-                        "section_2_video_link",
-                        "section_3_image",
-                        "section_3_description",
-                        "images",
+                        [
+                            'name' => 'link',
+                            'type' => 'text'
+                        ],
+                        [
+                            'name' => 'section_1_images',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_1_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'section_1_images',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_2_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'section_2_video_image',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_2_video_link',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_3_image',
+                            'type' => 'file'
+                        ],
+                        [
+                            'name' => 'section_3_description',
+                            'type' => 'textarea'
+                        ],
+                        [
+                            'name' => 'images',
+                            'type' => 'file'
+                        ],
                     ]),
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
