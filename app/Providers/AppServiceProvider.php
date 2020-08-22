@@ -39,5 +39,17 @@ class AppServiceProvider extends ServiceProvider
             'App\Contracts\HomeControllerInterface',
             'App\Services\HomeControllerService'
         );
+        $this->app->bind(
+            'App\Contracts\TeamInterface',
+            'App\Services\TeamControllerService'
+        );
+        $this->app->bind(
+            'App\Contracts\FeedbackControllerInterface',
+            'App\Services\FeedbackControllerService'
+        );
+        $this->app->bind(
+            'App\Contracts\ClientControllerInterface',
+            'App\Services\ClientControllerService'
+        );
     }
 }

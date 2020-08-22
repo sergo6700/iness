@@ -29,11 +29,39 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-
+                            <div class="col-md-5 pr-md-1">
+                                <div class="form-group">
+                                    <label>Project Title</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           required
+                                           value="{{$post['project_title']}}"
+                                           placeholder="Enter Project Title"
+                                           name="project_title">
+                                </div>
+                            </div>
+                            <div class="col-md-5 pr-md-1">
+                                <label>Project File</label>
+                                <input type="file"
+                                       class="form-control"
+                                       name="project_image"
+                                >
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Project description</label>
+                                    <textarea
+                                        class="form-control"
+                                        required
+                                        value="{{$post['project_description']}}"
+                                        placeholder="Enter project description"
+                                        name="project_description"
+                                    >{{$post['project_description']}}</textarea>
+                                </div>
+                            </div>
                             @foreach($template as $field)
                                 @foreach($post['data'] as $data => $val)
+
                                     @if($data == $field->name)
                                         @if($field->type == 'text')
                                             <div class="col-md-5 pr-md-1">

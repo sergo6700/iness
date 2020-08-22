@@ -26,7 +26,7 @@ class CreatePostRequest extends FormRequest
         return [
             'category_id'           => 'required',
             'project_title'         => 'required|min:4',
-            'project_image'         => 'required|mimes:jpeg,jpg,png',
+            'project_image'         => 'required|mimes:jpeg,bmp,png,gif,jpg',
             'project_description'   => 'required|min:10',
         ];
     }

@@ -41,11 +41,16 @@ function slick_client(e) {
 }
 
 function contactValidator() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     var e = $("#contact-form");
     e < 1 || (e.validator(), e.on("submit", function (t) {
         if (!t.isDefaultPrevented()) {
             return $.ajax({
-                type: "POST", url: "contact.php", data: $(this).serialize(), success: function (t) {
+                type: "POST", url: "/contact-us", data: $(this).serialize(), success: function (t) {
                     var n = "alert-" + t.type, a = t.message,
                         i = '<div class="alert ' + n + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + a + "</div>";
                     n && a && (e.find(".messages").html(i), e[0].reset()), setTimeout(function () {

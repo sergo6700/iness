@@ -15,6 +15,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Carbon;
 use Illuminate\View\View;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -53,7 +54,7 @@ class PostControllerService implements PostControllerInterface
      */
     public function create(TemplateRequest $request)
     {
-        $templateName = $request->all()->name;
+//        $templateName = $request->all()->name;
 
     }
 
@@ -66,21 +67,29 @@ class PostControllerService implements PostControllerInterface
     public function store(CreatePostRequest $request)
     {
         $inputData = $request->input();
+        $data = [];
         $files = $request->allFiles();
+        if($request->hasFile('project_image')){
+            if($file = $request->file('project_image')){
+                $name = time() . "_" . $file->getClientOriginalName();
+                $file->move('image/'.$request->project_title,$name);
+                $data['project_image'] = 'image/'.$request->project_title .'/' .$name;
+            }
+        }
         foreach ($files as $key => $val){
             if($fil = $request->file($key)){
                 foreach($fil as $file){
-                    $name = $file->getClientOriginalName();
+                    $name = time() . "_" . $file->getClientOriginalName();
                     $file->move('image/'.$request->project_title,$name);
-                    $inputData[$key][] = $name;
+                    $inputData[$key][] = 'image/'.$request->project_title .'/'.$name;
                 }
             }
         }
         $data['category_id'] = $request->category_id;
         $data['template_name'] = $request->template_name;
         $data['project_title'] = $request->project_title;
-        $data['project_image'] = $request->project_image;
         $data['project_description'] = $request->project_description;
+
         unset($inputData['_token']);
         unset($inputData['category_id']);
         unset($inputData['template_name']);
@@ -119,9 +128,12 @@ class PostControllerService implements PostControllerInterface
         if(!$post)
             abort(404);
         return [
-            'id'            => $post->id,
-            'data'          => json_decode($post->data),
-            'category_id'   => $post->category_id,
+            'id'                    => $post->id,
+            'project_title'         => $post->project_title,
+            'project_description'   => $post->project_description,
+            'project_image'         => $post->project_image,
+            'data'                  => json_decode($post->data),
+            'category_id'           => $post->category_id,
         ];
     }
 
@@ -134,21 +146,31 @@ class PostControllerService implements PostControllerInterface
      */
     public function update(UpdatePostRequest $request, $id)
     {
-        $oldData = $this->post->select('data','template_name')->where('id',$id)->first();
+        $oldData = $this->post->select('data','template_name','project_image')->where('id',$id)->first();
         if (!$oldData)
             abort(404);
         $old = json_decode($oldData->data);
+
+        $data = [];
 
         $new = $request->input();
 
         $files = $request->allFiles();
 
+        if($request->hasFile('project_image')){
+
+            if($file = $request->file('project_image')){
+                $name = time() . "_" . $file->getClientOriginalName();
+                $file->move('image/'.$request->project_title,$name);
+                $data['project_image'] = 'image/'.$request->project_title .'/' .$name;
+            }
+        }
         foreach ($files as $key => $val){
             if($fil = $request->file($key)){
                 foreach($fil as $file){
                     $name = $file->getClientOriginalName();
                     $file->move('image/'.$request->project_title,$name);
-                    $new[$key][] = $name;
+                    $new[$key][] = 'image/'.$request->project_title .'/'.$name;
                 }
             }
         }
@@ -162,23 +184,19 @@ class PostControllerService implements PostControllerInterface
                 }
             }
         }
-
         $data['category_id']            = $request->category_id;
         $data['template_name']          = $oldData->template_name;
-        $data['project_title']          = $oldData->project_title;
-        $data['project_image']          = $oldData->project_image;
-        $data['project_description']    = $oldData->project_description;
+        $data['project_title']          = $request->project_title;
+        $data['project_description']    = $request->project_description;
         unset($new['_token']);
         unset($new['category_id']);
         unset($new['template_name']);
         unset($new['project_title']);
         unset($new['project_image']);
         unset($new['project_description']);
-
         $data[
             'data'
         ] = json_encode($new);
-
         $post = $this->post->findOrFail($id);
         $post->update($data);
         toast('Your Post has been updated!','success');

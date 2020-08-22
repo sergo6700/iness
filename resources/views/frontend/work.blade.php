@@ -25,169 +25,68 @@
                         <div class="filtering-wrap">
                             <div class="filtering">
                                 <div class="selector"></div>
-                                <button type="button" data-filter="*" class="active">
+                                <button type="button"
+                                        data-filter="*"
+                                        class="active">
                                     All
                                 </button>
-                                <button type="button" data-filter=".brand">Brand</button>
-                                <button type="button" data-filter=".photography">Photography</button>
-                                <button type="button" data-filter=".architecture">Architecture</button>
-                                <button type="button" data-filter=".video">video</button>
-
+                                @foreach($categories as $category)
+                                    <button type="button"
+                                            data-filter="{{'.'.str_replace('/','',$category->name)}}">
+                                        {{$category->name}}
+                                    </button>
+                                @endforeach
                             </div>
                         </div>
                     </div>
-
                     <div class="projects-list gallery">
-                        <div class="item brand">
-                            <a href="project-9.html" class="effect-ajax" data-dsn-ajax="work"
-                               data-dsn-grid="move-up">
-                                <img class="has-top-bottom" src="{{asset("/img/project/project9/1.jpg")}}" alt=""/>
-                                <div class="item-border"></div>
-                                <div class="item-info">
-                                    <h5 class="cat">Brand</h5>
-                                    <h4>Time Tag Watch</h4>
-                                    <span><span>Veiw Project</span></span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item brand">
-                            <a href="project-4.html" class="effect-ajax" data-dsn-ajax="work"
-                               data-dsn-grid="move-up">
-                                <img class="has-top-bottom" src="{{asset('/img/project/project4/2.jpg')}}" alt=""/>
-                                <div class="item-border"></div>
-                                <div class="item-info">
-                                    <h5 class="cat">Brand</h5>
-                                    <h4>Under Armour</h4>
-                                    <span><span>Veiw Project</span></span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item photography">
-                            <a href="project-3.html" data-dsn-grid="move-up">
-                                <img class="has-top-bottom" src="{{asset('/img/project/project3/1.jpg')}}" alt=""/>
-                                <div class="item-border"></div>
-                                <div class="item-info">
-                                    <h5 class="cat">Photography</h5>
-                                    <h4>Re Styling</h4>
-                                    <span><span>Veiw Project</span></span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item video">
-                            <a href="project-8.html">
-                                <img class="hidden" src="{{asset('/img/project/project8/1.jpg')}}" alt=""/>
-                                <div data-dsn="video" data-overlay="4" style="height: 80vh">
-                                    <video class="has-top-bottom dsn-video"
-                                           poster="{{asset('/img/project/project8/1.jpg')}}" autoplay loop muted>
-                                        <source src="http://theme.dsngrid.com/video/droow.mp4" type="video/mp4"
-                                                type="video/mp4">
-                                        <source src="http://theme.dsngrid.com/video/droow.webm" type="video/webm">
-                                        Your browser does not support HTML5 video.
-                                    </video>
-                                </div>
-                                <div class="item-border"></div>
-                                <div class="item-info">
-                                    <h5 class="cat">video</h5>
-                                    <h4>Toast 2019 Reel</h4>
-                                    <span><span>Veiw Project</span></span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item photography">
-                            <a href="project-7.html" data-dsn-grid="move-up">
-                                <img class="has-top-bottom" src="{{asset('/img/project/project7/1.jpg')}}" alt=""/>
-                                <div class="item-border"></div>
-                                <div class="item-info">
-                                    <h5 class="cat">Photography</h5>
-                                    <h4>Nile - Kabutha</h4>
-                                    <span><span>Veiw Project</span></span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item photography">
-                            <a href="project-6.html" data-dsn-grid="move-up">
-                                <img class="has-top-bottom" src="{{asset('/img/project/project6/1.jpg')}}" alt=""/>
-                                <div class="item-border"></div>
-                                <div class="item-info">
-                                    <h5 class="cat">Photography</h5>
-                                    <h4>Sleep Walker</h4>
-                                    <span><span>Veiw Project</span></span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item brand">
-                            <a href="project-1.html" data-dsn-grid="move-up">
-                                <img class="has-top-bottom" src="{{asset('/img/project/project1/1.jpg')}}" alt=""/>
-                                <div class="item-border"></div>
-                                <div class="item-info">
-                                    <h5 class="cat">brand</h5>
-                                    <h4>Magista</h4>
-                                    <span><span>Veiw Project</span></span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item photography">
-                            <a href="project-2.html" data-dsn-grid="move-up">
-                                <img class="has-top-bottom" src="{{asset('/img/project/project2/1.jpg')}}" alt=""/>
-                                <div class="item-border"></div>
-                                <div class="item-info">
-                                    <h5 class="cat">Photography</h5>
-                                    <h4>Bastian Bux</h4>
-                                    <span><span>Veiw Project</span></span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item architecture">
-                            <a href="project-5.html" data-dsn-grid="move-up">
-                                <img class="has-top-bottom" src="{{asset('/img/project/project5/1.jpg')}}" alt=""/>
-                                <div class="item-border"></div>
-                                <div class="item-info">
-                                    <h5 class="cat">Architecture</h5>
-                                    <h4>Novara Conic</h4>
-                                    <span><span>Veiw Project</span></span>
-                                </div>
-                            </a>
-                        </div>
+                        @foreach($works as $work)
+                            <div class="item {{str_replace('/','',$work->category->name)}}">
+                                <a href="{{route('template',$work->id)}}" class="effect-ajax" data-dsn-ajax="work"
+                                   data-dsn-grid="move-up">
+                                    <img class="has-top-bottom" src="{{asset($work->project_image)}}" alt=""/>
+                                    <div class="item-border"></div>
+                                    <div class="item-info">
+                                        <h5 class="cat">{{$work->category->name}}</h5>
+                                        <h4>{{$work->project_title}}</h4>
+                                        <span><span>Veiw Project</span></span>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
 
-            <section class="contact-up section-margin section-padding">
-                <div class="container">
-                    <div class="c-wapp">
-                        <a href="{{route('contact')}}" class="effect-ajax">
-                                <span class="hiring">
-                                    We are hiring
-                                </span>
-                            <span class="career">
-                                    Dare and contact us immediately!
-                                </span>
-                        </a>
-                    </div>
-                </div>
-            </section>
+{{--            <section class="contact-up section-margin section-padding">--}}
+{{--                <div class="container">--}}
+{{--                    <div class="c-wapp">--}}
+{{--                        <a href="{{route('contact')}}" class="effect-ajax">--}}
+{{--                                <span class="hiring">--}}
+{{--                                    We are hiring--}}
+{{--                                </span>--}}
+{{--                            <span class="career">--}}
+{{--                                    Dare and contact us immediately!--}}
+{{--                                </span>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </section>--}}
 
         </div>
         <footer>
             <div class="info">
                 <div class="contact-footer">
-                    <a href="tel:010" class="phone image-zoom" data-dsn="parallax">012.345.6789</a>
-                    <a href="#" class="email image-zoom" data-dsn="parallax">info@dsngrid</a>
+                    <a href="tel:+37493852929" class="phone image-zoom" data-dsn="parallax">+(374)93 85-29-29</a>
+                    <a href="tel:+37491852925" class="phone image-zoom" data-dsn="parallax">+(374)91 85-29-25</a>
+                    <a href="mailto:info@nessa.am" class="email image-zoom" data-dsn="parallax">info@nessa.am</a>
                 </div>
                 <div class="copyright-social">
-                    <p>© 2019 Design Grid</p>
+                    <p>© 2020 NESSA Design Studio</p>
                     <ul>
-                        <li class="image-zoom" data-dsn="parallax"><a href="#" target="_blank">Instagram</a></li>
-                        <li class="image-zoom" data-dsn="parallax"><a href="#" target="_blank">Facebook</a></li>
-                        <li class="image-zoom" data-dsn="parallax"><a href="#" target="_blank">Linkedin</a></li>
+                        <li class="image-zoom" data-dsn="parallax"><a href="https://www.instagram.com/nessadesignstudio/" target="_blank">Instagram</a></li>
+                        <li class="image-zoom" data-dsn="parallax"><a href="https://www.instagram.com/nessa_art_/" target="_blank">Instagram</a></li>
+                        <li class="image-zoom" data-dsn="parallax"><a href="https://www.facebook.com/profile.php?id=100010628236933" target="_blank">Facebook</a></li>
                     </ul>
                 </div>
             </div>

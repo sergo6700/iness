@@ -14,9 +14,9 @@ class Category extends Model
     /**
      * Get the posts associated with category.
      */
-    public function post()
+    public function posts()
     {
-        return $this->hasMany('App\Models\Post');
+        return $this->hasMany('App\Models\Posts');
     }
 
 }

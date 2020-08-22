@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{('admin/assets/img/apple-icon.png')}}">
     <link rel="icon" type="image/png" href="{{('admin/assets/img/favicon.png')}}">
     <title>
-        Black Dashboard by Creative Tim
+        Nessa Design Studio Dashboard
     </title>
     <!-- Extra details for Live View on GitHub Pages -->
     <!-- Canonical SEO -->
@@ -50,13 +50,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
     <!-- Nucleo Icons -->
-    <link href="{{asset("admin/assets/css/nucleo-icons.css")}}" rel="stylesheet"/>
+{{--    <link href="{{asset("admin/assets/css/nucleo-icons.css")}}" rel="stylesheet"/>--}}
     <!-- CSS Files -->
     <link href="{{asset("admin/assets/css/black-dashboard.min.css?v=1.0.0")}}" rel="stylesheet"/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset("admin/assets/demo/demo.css")}}" rel="stylesheet"/>
-{{--    datatable css--}}
-{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">--}}
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
 
     <script src="https://cdn.tiny.cloud/1/958er1fsibancdqa1pluqb16705ubn068bjgtke20n0o3hjs/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -71,7 +69,7 @@
       -->
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="javascript:void(0)" class="simple-text logo-mini">
+                <a href="{{route('index')}}" class="simple-text logo-mini">
                     N
                 </a>
                 <a href="{{route('index')}}" class="simple-text logo-normal">
@@ -95,6 +93,24 @@
                     <a href="{{route('post.index')}}">
                         <i class="tim-icons icon-atom"></i>
                         <p>Post</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('client.index')}}">
+                        <i class="tim-icons icon-atom"></i>
+                        <p>Client</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('team.index')}}">
+                        <i class="tim-icons icon-atom"></i>
+                        <p>Team</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('feedback.index')}}">
+                        <i class="tim-icons icon-atom"></i>
+                        <p>Feedback</p>
                     </a>
                 </li>
             </ul>
@@ -122,33 +138,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav ml-auto">
-                        <li class="search-bar input-group">
-                            <button class="btn btn-link" id="search-button" data-toggle="modal"
-                                    data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
-                                <span class="d-lg-none d-md-block">Search</span>
-                            </button>
-                        </li>
-                        <li class="dropdown nav-item">
-                            <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                                <div class="notification d-none d-lg-block d-xl-block"></div>
-                                <i class="tim-icons icon-sound-wave"></i>
-                                <p class="d-lg-none">
-                                    Notifications
-                                </p>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
-                                <li class="nav-link"><a href="#" class="nav-item dropdown-item">Mike John responded to
-                                        your email</a></li>
-                                <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">You
-                                        have 5 more tasks</a></li>
-                                <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Your
-                                        friend Michael is in town</a></li>
-                                <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Another
-                                        notification</a></li>
-                                <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Another
-                                        one</a></li>
-                            </ul>
-                        </li>
                         <li class="dropdown nav-item">
                             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                 <div class="photo">
@@ -174,19 +163,6 @@
                 </div>
             </div>
         </nav>
-        <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <i class="tim-icons icon-simple-remove"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- End Navbar -->
         <div class="content">
             @include('sweetalert::alert')
@@ -194,23 +170,6 @@
         </div>
         <footer class="footer">
             <div class="container-fluid">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="nav-link">
-                            Creative Tim
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="nav-link">
-                            About Us
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="nav-link">
-                            Blog
-                        </a>
-                    </li>
-                </ul>
                 <div class="copyright">
                     ©
                     2020 made with <i class="tim-icons icon-heart-2"></i> by
@@ -471,10 +430,7 @@
             "insertdatetime media table contextmenu paste imagetools"
         ],
         toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-        content_css: [
-            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-            '//www.tinymce.com/css/codepen.min.css'
-        ],
+
         image_title: true,
         automatic_uploads: false,
         file_picker_types: 'image',

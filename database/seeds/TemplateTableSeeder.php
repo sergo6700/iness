@@ -169,14 +169,6 @@ class TemplateTableSeeder extends Seeder
                     'name' => 'template6',
                     'fields' => json_encode([
                         [
-                            'name' => 'project_title',
-                            'type' => 'text'
-                        ],
-                        [
-                            'name' => 'project_image',
-                            'type' => 'file'
-                        ],
-                        [
                             'name' => 'images',
                             'type' => 'file'
                         ]
@@ -239,54 +231,6 @@ class TemplateTableSeeder extends Seeder
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
                 ],
-                [
-                    'name' => 'template9',
-                    'fields' => json_encode([
-                        [
-                            'name' => 'link',
-                            'type' => 'text'
-                        ],
-                        [
-                            'name' => 'section_1_images',
-                            'type' => 'file'
-                        ],
-                        [
-                            'name' => 'section_1_description',
-                            'type' => 'textarea'
-                        ],
-                        [
-                            'name' => 'section_1_images',
-                            'type' => 'file'
-                        ],
-                        [
-                            'name' => 'section_2_description',
-                            'type' => 'textarea'
-                        ],
-                        [
-                            'name' => 'section_2_video_image',
-                            'type' => 'file'
-                        ],
-                        [
-                            'name' => 'section_2_video_link',
-                            'type' => 'file'
-                        ],
-                        [
-                            'name' => 'section_3_image',
-                            'type' => 'file'
-                        ],
-                        [
-                            'name' => 'section_3_description',
-                            'type' => 'textarea'
-                        ],
-                        [
-                            'name' => 'images',
-                            'type' => 'file'
-                        ],
-                    ]),
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ],
-
             ]);
 
         } else {

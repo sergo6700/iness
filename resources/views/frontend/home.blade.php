@@ -5,501 +5,132 @@
             <div class="dsn-root-slider" id="dsn-hero-parallax-img">
                 <div class="slide-inner">
                     <div class="swiper-wrapper">
-                        <div class="slide-item swiper-slide">
-                            <div class="slide-content">
-                                <div class="slide-content-inner">
-                                    <div class="project-metas">
-                                        <div class="project-meta-box project-work cat">
-                                            <span>Brands</span>
+                        @foreach($sliderPosts as $post)
+                            @if(isset($post->category))
+                                <div class="slide-item swiper-slide">
+                                    <div class="slide-content">
+                                        <div class="slide-content-inner">
+                                            <div class="project-metas">
+                                                <div class="project-meta-box project-work cat">
+                                                    <span>{{$post->category->name}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="title-text-header">
+                                                <div class="title-text-header-inner">
+                                                    <a href="{{route('template',$post->id)}}" class="effect-ajax"
+                                                       data-dsn-ajax="slider">
+                                                        {{$post->project_title}}
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <p>
+                                                {!! $post->project_description !!}
+                                            </p>
+
+                                            <div class="link-custom">
+                                                <a href="{{route('template',$post->id)}}" class="image-zoom effect-ajax"
+                                                   data-dsn="parallax"
+                                                   data-dsn-ajax="slider">
+                                                    <span>View Case</span>
+                                                </a>
+                                            </div>
+
                                         </div>
                                     </div>
-
-                                    <div class="title-text-header">
-                                        <div class="title-text-header-inner">
-                                            <a href="project-9.html" class="effect-ajax" data-dsn-ajax="slider">
-                                                Time Tag Watch
-                                            </a>
+                                    <div class="image-container">
+                                        <div class="image-bg cover-bg"
+                                             data-image-src="{{asset($post->project_image)}}"
+                                             data-overlay="0">
+                                            <img src="{{asset($post->project_image)}}"
+                                                 alt="">
                                         </div>
                                     </div>
-
-                                    <p>Sometimes, we need to check the time, wondering when our work
-                                        or meeting will finish, without getting caught by others.</p>
-
-                                    <div class="link-custom">
-                                        <a href="project-9.html" class="image-zoom effect-ajax" data-dsn="parallax"
-                                           data-dsn-ajax="slider">
-                                            <span>View Case</span>
-                                        </a>
-                                    </div>
-
                                 </div>
-                            </div>
-                            <div class="image-container">
-                                <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project9/1.jpg')}}"
-                                     data-overlay="0">
-                                    <img src="{{asset('/img/project/project9/1.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="slide-item swiper-slide">
-                            <div class="slide-content">
-                                <div class="slide-content-inner">
-                                    <div class="project-metas">
-                                        <div class="project-meta-box project-work cat">
-                                            <span>Brands</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="title-text-header">
-                                        <div class="title-text-header-inner">
-                                            <a href="project-4.html" class="effect-ajax" data-dsn-ajax="slider">
-                                                Under Armour
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <p>Cal was first. The first public university in the great state
-                                        of California. They are the pioneers. They are the trailblazers who started
-                                        it all.</p>
-
-                                    <div class="link-custom">
-                                        <a href="project-4.html" class="image-zoom effect-ajax" data-dsn="parallax"
-                                           data-dsn-ajax="slider">
-                                            <span>View Case</span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="image-container">
-                                <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project4/1.jpg')}}"
-                                     data-overlay="4">
-                                    <img src="{{asset('/img/project/project4/1.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="slide-item swiper-slide">
-                            <div class="slide-content">
-                                <div class="slide-content-inner">
-                                    <div class="project-metas">
-                                        <div class="project-meta-box project-work cat">
-                                            <span>Photography</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="title-text-header">
-                                        <div class="title-text-header-inner">
-                                            <a href="project-3.html" class="effect-ajax" data-dsn-ajax="slider">
-                                                Re Styling
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <p>Once the brand strategy was sharp and real for everyone inside of the
-                                        company, all the brand behavior started to roll out as stationary material.
-                                    </p>
-
-                                    <div class="link-custom">
-                                        <a href="project-3.html" class="image-zoom effect-ajax" data-dsn="parallax"
-                                           data-dsn-ajax="slider">
-                                            <span>View Case</span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="image-container">
-                                <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project3/1.jpg')}}"
-                                     data-overlay="0">
-                                    <img src="{{asset('/img/project/project3/1.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="slide-item swiper-slide">
-                            <div class="slide-content">
-                                <div class="slide-content-inner">
-                                    <div class="project-metas">
-                                        <div class="project-meta-box project-work cat">
-                                            <span>Photography</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="title-text-header">
-                                        <div class="title-text-header-inner">
-                                            <a href="project-8.html" class="effect-ajax" data-dsn-ajax="slider">
-                                                Toast 2019 Reel
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <p>We are thrilled to share our new reel with you all! Special
-                                        thanks to all of our talented friends.</p>
-
-                                    <div class="link-custom">
-                                        <a href="project-8.html" class="image-zoom effect-ajax" data-dsn="parallax"
-                                           data-dsn-ajax="slider">
-                                            <span>View Case</span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="image-container">
-                                <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project8/1.jpg')}}"
-                                     data-overlay="2">
-                                    <img src="{{asset('/img/project/project8/1.jpg')}}" alt="">
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="slide-item swiper-slide">
-                            <div class="slide-content">
-                                <div class="slide-content-inner">
-                                    <div class="project-metas">
-                                        <div class="project-meta-box project-work cat">
-                                            <span>Photography</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="title-text-header">
-                                        <div class="title-text-header-inner">
-                                            <a href="project-7.html" class="effect-ajax" data-dsn-ajax="slider">
-                                                Nile - Kabutha
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <p>Striking and powerful Aston Martin Vantage captivates you at
-                                        the first sight.</p>
-
-                                    <div class="link-custom">
-                                        <a href="project-7.html" class="image-zoom effect-ajax" data-dsn="parallax"
-                                           data-dsn-ajax="slider">
-                                            <span>View Case</span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="image-container">
-                                <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project7/1.jpg')}}"
-                                     data-overlay="2">
-                                    <img src="{{asset('/img/project/project7/1.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="slide-item swiper-slide">
-                            <div class="slide-content">
-                                <div class="slide-content-inner">
-                                    <div class="project-metas">
-                                        <div class="project-meta-box project-work cat">
-                                            <span>Photography</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="title-text-header">
-                                        <div class="title-text-header-inner">
-                                            <a href="project-6.html" class="effect-ajax" data-dsn-ajax="slider">
-                                                Sleep Walker
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="link-custom">
-                                        <a href="project-6.html" class="image-zoom effect-ajax" data-dsn="parallax"
-                                           data-dsn-ajax="slider">
-                                            <span>View Case</span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="image-container">
-                                <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project6/1.jpg')}}"
-                                     data-overlay="5">
-                                    <img src="{{asset('/img/project/project6/1.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="slide-item swiper-slide">
-                            <div class="slide-content">
-                                <div class="slide-content-inner">
-                                    <div class="project-metas">
-                                        <div class="project-meta-box project-work cat">
-                                            <span>Sports</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="title-text-header">
-                                        <div class="title-text-header-inner">
-                                            <a href="project-1.html" class="effect-ajax" data-dsn-ajax="slider">
-                                                Magista
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <p>The Brief team has been sincerely committed to
-                                        designing great communication around our projects. </p>
-
-                                    <div class="link-custom">
-                                        <a href="project-1.html" class="image-zoom effect-ajax" data-dsn="parallax"
-                                           data-dsn-ajax="slider">
-                                            <span>View Case</span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="image-container">
-                                <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project1/1.jpg')}}"
-                                     data-overlay="2">
-                                    <img src="{{asset('/img/project/project1/1.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="slide-item swiper-slide">
-                            <div class="slide-content">
-                                <div class="slide-content-inner">
-                                    <div class="project-metas">
-                                        <div class="project-meta-box project-work cat">
-                                            <span>Photography</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="title-text-header">
-                                        <div class="title-text-header-inner">
-                                            <a href="project-1.html" class="effect-ajax" data-dsn-ajax="slider">
-                                                Bastian Bux
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <p>Bastian bux is the consequence of reducing everything
-                                        surrounding a dj and producer to its essential element: the music.</p>
-
-                                    <div class="link-custom">
-                                        <a href="project-2.html" class="image-zoom effect-ajax" data-dsn="parallax"
-                                           data-dsn-ajax="slider">
-                                            <span>View Case</span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="image-container">
-                                <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project2/1.jpg')}}"
-                                     data-overlay="0">
-                                    <img src="{{asset('/img/project/project2/1.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="slide-item swiper-slide">
-                            <div class="slide-content">
-                                <div class="slide-content-inner">
-                                    <div class="project-metas">
-                                        <div class="project-meta-box project-work cat">
-                                            <span>Architecture</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="title-text-header">
-                                        <div class="title-text-header-inner">
-                                            <a href="project-5.html" class="effect-ajax" data-dsn-ajax="slider">
-                                                Novara Conic
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <p>Cal was first. The first public university in the great state
-                                        of California. They are the pioneers.</p>
-
-                                    <div class="link-custom">
-                                        <a href="project-5.html" class="image-zoom effect-ajax" data-dsn="parallax"
-                                           data-dsn-ajax="slider">
-                                            <span>View Case</span>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="image-container">
-                                <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project5/1.jpg')}}"
-                                     data-overlay="4">
-                                    <img src="{{asset('/img/project/project5/1.jpg')}}" alt="">
-                                </div>
-                            </div>
-                        </div>
-
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>
 
             <div class="dsn-slider-content"></div>
 
-
             <div class="nav-slider">
                 <div class="swiper-wrapper" role="navigation">
-                    <div class="swiper-slide">
-                        <div class="image-container">
-                            <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project9/6.jpg')}}"
-                                 data-overlay="2">
+                    @foreach($sliderPosts as $post)
+                        @if(isset($post->category))
+                            <div class="swiper-slide">
+                                <div class="image-container">
+                                    <div class="image-bg cover-bg"
+                                         data-image-src="{{asset($post->project_image)}}"
+                                         data-overlay="2">
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <p>+</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="content">
-                            <p>01</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="image-container">
-                            <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project4/13.jpg')}}"
-                                 data-overlay="2">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>02</p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="image-container">
-                            <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project3/3.jpg')}}"
-                                 data-overlay="2">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>03</p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="image-container">
-                            <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project8/2.jpg')}}"
-                                 data-overlay="2">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>04</p>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="image-container">
-                            <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project7/2.jpg')}}"
-                                 data-overlay="2">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>05</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="image-container">
-                            <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project6/4.jpg')}}"
-                                 data-overlay="2">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>06</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="image-container">
-                            <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project1/2.jpg')}}"
-                                 data-overlay="2">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>07</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="image-container">
-                            <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project2/3.jpg')}}"
-                                 data-overlay="2">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>08</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="image-container">
-                            <div class="image-bg cover-bg" data-image-src="{{asset('/img/project/project5/4.jpg')}}"
-                                 data-overlay="2">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>09</p>
-                        </div>
-                    </div>
+                        @endif
+                    @endforeach
                 </div>
             </div>
 
-            <section class="footer-slid" id="descover-holder">
-                <div class="main-social">
-                    <div class="social-icon">
-                        <div class="social-btn">
-                            <div class="svg-wrapper">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.3 23.2">
-                                    <path
-                                        d="M19.4 15.5c-1.2 0-2.4.6-3.1 1.7L7.8 12v-.7l8.5-5.1c.7 1 1.9 1.6 3.1 1.6 2.1 0 3.9-1.7 3.9-3.9S21.6 0 19.4 0s-3.9 1.7-3.9 3.9v.4L7 9.3c-1.3-1.7-3.7-2-5.4-.8s-2.1 3.7-.8 5.4c.7 1 1.9 1.6 3.1 1.6s2.4-.6 3.1-1.6l8.5 5v.4c0 2.1 1.7 3.9 3.9 3.9s3.9-1.7 3.9-3.9c0-2.1-1.7-3.8-3.9-3.8zm0-13.6c1.1 0 1.9.9 1.9 1.9s-.9 1.9-1.9 1.9-1.9-.7-1.9-1.8.8-2 1.9-2zM3.9 13.6c-1.1 0-1.9-.9-1.9-1.9s.9-1.9 1.9-1.9 1.9.9 1.9 1.9-.8 1.9-1.9 1.9zm15.5 7.8c-1.1 0-1.9-.9-1.9-1.9s.9-1.9 1.9-1.9 1.9.9 1.9 1.9-.8 1.8-1.9 1.9z">
-                                    </path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="social-network">
-                        <li>
-                            <a href="#">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+{{--            <section class="footer-slid" id="descover-holder">--}}
+{{--                <div class="main-social">--}}
+{{--                    <div class="social-icon">--}}
+{{--                        <div class="social-btn">--}}
+{{--                            <div class="svg-wrapper">--}}
+{{--                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.3 23.2">--}}
+{{--                                    <path--}}
+{{--                                        d="M19.4 15.5c-1.2 0-2.4.6-3.1 1.7L7.8 12v-.7l8.5-5.1c.7 1 1.9 1.6 3.1 1.6 2.1 0 3.9-1.7 3.9-3.9S21.6 0 19.4 0s-3.9 1.7-3.9 3.9v.4L7 9.3c-1.3-1.7-3.7-2-5.4-.8s-2.1 3.7-.8 5.4c.7 1 1.9 1.6 3.1 1.6s2.4-.6 3.1-1.6l8.5 5v.4c0 2.1 1.7 3.9 3.9 3.9s3.9-1.7 3.9-3.9c0-2.1-1.7-3.8-3.9-3.8zm0-13.6c1.1 0 1.9.9 1.9 1.9s-.9 1.9-1.9 1.9-1.9-.7-1.9-1.8.8-2 1.9-2zM3.9 13.6c-1.1 0-1.9-.9-1.9-1.9s.9-1.9 1.9-1.9 1.9.9 1.9 1.9-.8 1.9-1.9 1.9zm15.5 7.8c-1.1 0-1.9-.9-1.9-1.9s.9-1.9 1.9-1.9 1.9.9 1.9 1.9-.8 1.8-1.9 1.9z">--}}
+{{--                                    </path>--}}
+{{--                                </svg>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <ul class="social-network">--}}
+{{--                        <li>--}}
+{{--                            <a href="#">--}}
+{{--                                <i class="fab fa-facebook-f"></i>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#">--}}
+{{--                                <i class="fab fa-twitter"></i>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#">--}}
+{{--                                <i class="fab fa-instagram"></i>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#">--}}
+{{--                                <i class="fab fa-linkedin-in"></i>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
 
-                <div class="control-num">
-                    <span class="sup active">01</span>
-                </div>
-                <div class="control-nav">
-                    <div class="prev-container" data-dsn="parallax">
-                        <svg viewBox="0 0 40 40">
-                            <path class="path circle" d="M20,2A18,18,0,1,1,2,20,18,18,0,0,1,20,2"></path>
-                            <polyline class="path" points="14.6 17.45 20 22.85 25.4 17.45"></polyline>
-                        </svg>
-                    </div>
+{{--                <div class="control-num">--}}
+{{--                    <span class="sup active">01</span>--}}
+{{--                </div>--}}
+{{--                <div class="control-nav">--}}
+{{--                    <div class="prev-container" data-dsn="parallax">--}}
+{{--                        <svg viewBox="0 0 40 40">--}}
+{{--                            <path class="path circle" d="M20,2A18,18,0,1,1,2,20,18,18,0,0,1,20,2"></path>--}}
+{{--                            <polyline class="path" points="14.6 17.45 20 22.85 25.4 17.45"></polyline>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
 
-                    <div class="next-container" data-dsn="parallax">
-                        <svg viewBox="0 0 40 40">
-                            <path class="path circle" d="M20,2A18,18,0,1,1,2,20,18,18,0,0,1,20,2"></path>
-                            <polyline class="path" points="14.6 17.45 20 22.85 25.4 17.45"></polyline>
-                        </svg>
-                    </div>
-                </div>
-            </section>
+{{--                    <div class="next-container" data-dsn="parallax">--}}
+{{--                        <svg viewBox="0 0 40 40">--}}
+{{--                            <path class="path circle" d="M20,2A18,18,0,1,1,2,20,18,18,0,0,1,20,2"></path>--}}
+{{--                            <polyline class="path" points="14.6 17.45 20 22.85 25.4 17.45"></polyline>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </section>--}}
 
         </div>
 
@@ -513,7 +144,7 @@
 
                                 <h2 data-dsn-grid="move-section" data-dsn-move="-30" data-dsn-duration="100%"
                                     data-dsn-opacity="1.2" data-dsn-responsive="tablet">
-                                    Hello we are, <br /> Dsn Grid
+                                    Hello we are, <br/> Dsn Grid
                                 </h2>
 
                                 <p data-dsn-animate="text">Founded in 2000, Dsn Grid has become one of the best
@@ -621,11 +252,6 @@
                         <p>A system that young people around the world with a club culture and techno
                             enthusiasts feel identified. We generated a simple logo that is the basis for
                             generating a geometric and liquid system. </p>
-                        <div class="link-custom">
-                            <a class="image-zoom effect-ajax" href="project-2.html" data-dsn="parallax">
-                                <span>Learn More</span>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -644,61 +270,24 @@
                         <div class="col-lg-9 offset-lg-3">
                             <div class="work-container">
                                 <div class="slick-slider">
-                                    <div class="work-item slick-slide">
-                                        <img class="has-top-bottom" src="{{asset('/img/project/project3/1.jpg')}}" alt="">
-                                        <div class="item-border"></div>
-                                        <div class="item-info">
-                                            <a href="project-7.html" data-dsn-grid="move-up" class="effect-ajax">
-
-                                                <h5 class="cat">Photography</h5>
-                                                <h4>Nile - Kabutha</h4>
-                                                <span><span>Veiw Project</span></span>
-                                            </a>
-
+                                    @foreach($randomPosts as $posts)
+                                        <div class="work-item slick-slide">
+                                            <img
+                                                class="has-top-bottom"
+                                                src="{{asset($posts->project_image)}}"
+                                                alt="">
+                                            <div class="item-border"></div>
+                                            <div class="item-info">
+                                                <a href="{{route('template',$posts->id)}}"
+                                                   data-dsn-grid="move-up"
+                                                   class="effect-ajax">
+                                                    <h5 class="cat">{{$posts->category->name}}</h5>
+                                                    <h4>{{$posts->project_title}}</h4>
+                                                    <span><span>View Project</span></span>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-
-                                    <div class="work-item slick-slide">
-                                        <img class="has-top-bottom" src="{{asset('/img/project/project6/1.jpg')}}" alt="">
-                                        <div class="item-border"></div>
-                                        <div class="item-info">
-                                            <a href="project-6.html" data-dsn-grid="move-up" class="effect-ajax">
-
-                                                <h5 class="cat">Fashion</h5>
-                                                <h4>Bloawshom</h4>
-                                                <span><span>Veiw Project</span></span>
-                                            </a>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="work-item slick-slide">
-                                        <img class="has-top-bottom" src="{{asset('/img/project/project4/1.jpg')}}" alt="">
-                                        <div class="item-border"></div>
-                                        <div class="item-info">
-                                            <a href="project-4.html" data-dsn-grid="move-up" class="effect-ajax">
-
-                                                <h5 class="cat">Photography</h5>
-                                                <h4>Bastian Bux</h4>
-                                                <span><span>Veiw Project</span></span>
-                                            </a>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="work-item slick-slide">
-                                        <img class="has-top-bottom" src="{{asset('/img/project/project5/1.jpg')}}" alt="">
-                                        <div class="item-border"></div>
-                                        <div class="item-info">
-                                            <a href="project-5.html" data-dsn-grid="move-up" class="effect-ajax">
-
-                                                <h5 class="cat">Fashion</h5>
-                                                <h4>Bloawshom</h4>
-                                                <span><span>Veiw Project</span></span>
-                                            </a>
-
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
 
                             </div>
@@ -740,12 +329,6 @@
                                     not the hands, it gets harder to be damaged. It provides you with experience to
                                     feel
                                     the time at the end of your finger without damaging your watch.</p>
-
-                                <div class="link-custom" data-dsn-animate="up">
-                                    <a class="image-zoom effect-ajax" href="project-9.html" data-dsn="parallax">
-                                        <span>Learn More</span>
-                                    </a>
-                                </div>
                             </div>
                         </div>
 
@@ -766,56 +349,18 @@
                         <div class="items">
                             <div class="bg"></div>
                             <div class="slick-slider">
-                                <div class="item">
-                                    <div class="quote">
-                                        <p>"The Brief team has been sincerely committed to
-                                            designing great communication around our projects. Our customers love
-                                            their
-                                            creative work - and so do we!"</p>
-                                    </div>
-                                    <div class="bottom">
-                                        <div class="avatar">
-                                            <img src="{{asset('/img/avatar/1.jpg')}}" alt="">
+                                @foreach($feedback as $row)
+                                    <div class="item">
+                                        <div class="quote">
+                                            <p>{!! $row->feedback !!}</p>
                                         </div>
-                                        <div class="label">
-                                            <div class="cell">- Helen Ginsberg, CEO of Treasure Island</div>
+                                        <div class="bottom">
+                                            <div class="label">
+                                                <div class="cell">- {{$row->name}}, {{$row->company}}</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="quote">
-                                        <p>"Stage direction, music, ballet, workshops, backstage, the GTG presents
-                                            the
-                                            first
-                                            episode of the series “Les Indes galantes en création"</p>
-                                    </div>
-                                    <div class="bottom">
-                                        <div class="avatar">
-                                            <img src="{{asset('/img/avatar/2.jpg')}}" alt="">
-                                        </div>
-                                        <div class="label">
-                                            <div class="cell">- Helen Ginsberg, CEO of Treasure Island</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="quote">
-                                        <p>"The Brief team has been sincerely committed to
-                                            designing great communication around our projects. Our customers love
-                                            their
-                                            creative work - and so do we!"</p>
-                                    </div>
-                                    <div class="bottom">
-                                        <div class="avatar">
-                                            <img src="{{asset('/img/avatar/3.jpg')}}" alt="">
-                                        </div>
-                                        <div class="label">
-                                            <div class="cell">- Helen Ginsberg, CEO of Treasure Island</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -832,59 +377,24 @@
                     </div>
                     <div class="custom-container">
                         <div class="slick-slider">
-                            <div class="item-new slick-slide">
-                                <div class="image" data-overlay="5">
-                                    <img src="{{asset('/img/blog/1')}}.jpg" alt="">
-                                </div>
-                                <div class="content">
-                                    <div class="background"></div>
-                                    <h5>Web , Brand</h5>
-
-                                    <div class="cta">
-                                        <a href="#">Digital Photography Tips</a>
+                            @foreach($latestPosts as $post)
+                                <div class="item-new slick-slide">
+                                    <div class="image" data-overlay="5">
+                                        <img src="{{asset($post->project_image)}}" alt="">
                                     </div>
+                                    <div class="content">
+                                        <div class="background"></div>
+                                        <h5>{{$post->category->name}}</h5>
 
-                                    <p>Simple point-and-shoot digital cameras can give surprising quality when they
-                                        have the right lenses and sensors.</p>
+                                        <div class="cta">
+                                            <a href="{{route('template',$post->id)}}">{{$post->project_title}}</a>
+                                        </div>
 
-                                </div>
-                            </div>
+                                        <p>{!! $post->project_description !!}</p>
 
-                            <div class="item-new slick-slide">
-                                <div class="image" data-overlay="5">
-                                    <img src="{{asset('/img/blog/2')}}.jpg" alt="">
-                                </div>
-                                <div class="content">
-                                    <div class="background"></div>
-                                    <h5>Web , Brand</h5>
-
-                                    <div class="cta">
-                                        <a href="#">Digital Photography Tips</a>
                                     </div>
-
-                                    <p>Simple point-and-shoot digital cameras can give surprising quality when they
-                                        have the right lenses and sensors.</p>
                                 </div>
-                            </div>
-
-                            <div class="item-new slick-slide">
-                                <div class="image" data-overlay="5">
-                                    <img src="{{asset('/img/blog/3')}}.jpg" alt="">
-                                </div>
-                                <div class="content">
-                                    <div class="background"></div>
-                                    <h5>Web , Brand</h5>
-
-                                    <div class="cta">
-                                        <a href="#">Digital Photography Tips</a>
-                                    </div>
-
-                                    <p>Simple point-and-shoot digital cameras can give surprising quality when they
-                                        have the right lenses and sensors.</p>
-
-                                </div>
-                            </div>
-
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -900,137 +410,44 @@
                     </div>
 
                     <div class="wapper-client">
-                        <div class="logo-box">
-                            <img src="{{asset('/img/logo/1')}}.png" alt="">
+                        @foreach($client as $row)
+                            <div class="logo-box">
+                                <img src="{{asset($row->logo)}}" alt="">
 
-                            <div class="info">
-                                <div class="content">
-                                    <div class="icon">
-                                        <i class="fas fa-plus"></i>
-                                    </div>
+                                <div class="info">
+                                    <div class="content">
+                                        <div class="icon">
+                                            <i class="fas fa-plus"></i>
+                                        </div>
 
-                                    <div class="entry">
-                                        <div>
-                                            <h5>Google</h5>
-                                            <a href="#">www.google.com</a>
+                                        <div class="entry">
+                                            <div>
+                                                <h5>{{$row->client}}</h5>
+                                                <a href="{{$row->link}}">{{$row->link}}</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="logo-box">
-                            <img src="{{asset('/img/logo/2')}}.png" alt="">
-
-                            <div class="info">
-                                <div class="content">
-                                    <div class="icon">
-                                        <i class="fas fa-plus"></i>
-                                    </div>
-
-                                    <div class="entry">
-                                        <div>
-                                            <h5>Google</h5>
-                                            <a href="#">www.google.com</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="logo-box">
-                            <img src="{{asset('/img/logo/3')}}.png" alt="">
-
-                            <div class="info">
-                                <div class="content">
-                                    <div class="icon">
-                                        <i class="fas fa-plus"></i>
-                                    </div>
-
-                                    <div class="entry">
-                                        <div>
-                                            <h5>Google</h5>
-                                            <a href="#">www.google.com</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="logo-box">
-                            <img src="{{asset('/img/logo/4')}}.png" alt="">
-
-                            <div class="info">
-                                <div class="content">
-                                    <div class="icon">
-                                        <i class="fas fa-plus"></i>
-                                    </div>
-
-                                    <div class="entry">
-                                        <div>
-                                            <h5>Google</h5>
-                                            <a href="#">www.google.com</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="logo-box">
-                            <img src="{{asset('/img/logo/5')}}.png" alt="">
-
-                            <div class="info">
-                                <div class="content">
-                                    <div class="icon">
-                                        <i class="fas fa-plus"></i>
-                                    </div>
-
-                                    <div class="entry">
-                                        <div>
-                                            <h5>Google</h5>
-                                            <a href="#">www.google.com</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="logo-box">
-                            <img src="{{asset('/img/logo/6')}}.png" alt="">
-
-                            <div class="info">
-                                <div class="content">
-                                    <div class="icon">
-                                        <i class="fas fa-plus"></i>
-                                    </div>
-
-                                    <div class="entry">
-                                        <div>
-                                            <h5>Google</h5>
-                                            <a href="#">www.google.com</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </section>
 
-            <section class="contact-up section-margin section-padding">
-                <div class="container">
-                    <div class="c-wapp">
-                        <a href="contact.html" class="effect-ajax">
-                                <span class="hiring">
-                                    We are hiring
-                                </span>
-                            <span class="career">
-                                    Dare and contact us immediately!
-                                </span>
-                        </a>
-                    </div>
-                </div>
-            </section>
+{{--            <section class="contact-up section-margin section-padding">--}}
+{{--                <div class="container">--}}
+{{--                    <div class="c-wapp">--}}
+{{--                        <a href="contact.html" class="effect-ajax">--}}
+{{--                                <span class="hiring">--}}
+{{--                                    We are hiring--}}
+{{--                                </span>--}}
+{{--                            <span class="career">--}}
+{{--                                    Dare and contact us immediately!--}}
+{{--                                </span>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </section>--}}
 
         </div>
 
@@ -1047,10 +464,10 @@
                                 <div class="footer-social">
 
                                     <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://www.facebook.com/profile.php?id=100010628236933" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="https://www.instagram.com/nessadesignstudio/"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://www.instagram.com/nessa_art_/"><i class="fab fa-instagram"></i></a></li>
 
                                     </ul>
 
@@ -1063,11 +480,10 @@
                                 <h4 class="footer-title">Navigation</h4>
                                 <nav>
                                     <ul>
-                                        <li><a href="#">Portfolio</a>
-                                        </li>
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">News</a></li>
-                                        <li><a href="#">Contact</a>
+                                        <li><a href="{{route('home')}}">Home</a></li>
+                                        <li><a href="{{route('about')}}">About</a></li>
+                                        <li><a href="{{route('work')}}">Work</a></li>
+                                        <li><a href="{{route('contact')}}">Contact</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -1077,10 +493,11 @@
                         <div class="col-md-3 dsn-col-footer">
                             <div class="footer-block col-contact">
                                 <h4 class="footer-title">Contact</h4>
-                                <p><strong>T</strong> <span>:</span> +001 225 3351</p>
-                                <p><strong>F</strong> <span>:</span>+001 225 3351</p>
+                                <p><strong>T</strong> <span>:</span> +(374)93 85-29-29</p>
+                                <p><strong>T</strong> <span>:</span> +(374)91 85-29-25</p>
                                 <p class="over-hidden"><strong>E</strong> <span>:</span><a class="link-hover"
-                                                                                           data-hover-text="info@dsngrid.com" href="#">info@dsngrid.com</a>
+                                                                                           data-hover-text="info@nessa.am"
+                                                                                           href="#">info@nessa.am</a>
                                 </p>
                             </div>
                         </div>
@@ -1089,9 +506,8 @@
                             <div class="col-address">
                                 <h4 class="footer-title">Address</h4>
 
-                                <p>El-Mahalla El-Kubra 37<br>
-                                    1776 Damietta<br>
-                                    Egypt</p>
+                                <p>Yerevan<br>
+                                    Armenia</p>
                             </div>
                         </div>
                     </div>
@@ -1099,9 +515,10 @@
 
                 <div class="copyright">
                     <div class="text-center">
-                        <p>© 2020 Droow Digital Agency</p>
-                        <div class="copright-text over-hidden">Designed by <a class="link-hover"
-                                                                              data-hover-text="DSN Grid" href="#" target="_blank">DSN Grid</a>
+                        <p>© 2020 NESSA Design Studio</p>
+                        <div class="copright-text over-hidden">Designed and powered by <a class="link-hover"
+                                                                              data-hover-text="DSN Grid" href="https://www.facebook.com/sergrigoryan1"
+                                                                              target="_blank">Sergey Grigoryan</a>
                         </div>
                     </div>
                 </div>

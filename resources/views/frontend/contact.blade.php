@@ -33,15 +33,16 @@
                                 <ul>
                                     <li>
                                         <span>Phone</span>
-                                        <a href="#">+1 (800) 990 8877</a>
+                                        <a href="tel:+37493852929">+(374)93 85-29-29</a>
+                                        <a href="tel:+37491852925">+(374)91 85-29-25</a>
                                     </li>
                                     <li>
                                         <span>Email</span>
-                                        <a href="#">info@example.com</a>
+                                        <a href="mailto:info@nessa.am">info@nessa.am</a>
                                     </li>
                                     <li>
                                         <span>Address</span>
-                                        <a href="#">778 NE 84th St Miami, FL</a>
+                                        <a href="#">Armenia, Yerevan</a>
                                     </li>
                                 </ul>
                             </div>
@@ -50,14 +51,19 @@
                         <div class="col-lg-6">
                             <div class="form-box">
                                 <h3>Write A Comment</h3>
-                                <form id="contact-form" class="form" method="post" action="contact.php" data-toggle="validator">
+                                @if(Session::has('success'))
+                                    <div class="alert alert-success">
+                                        {{ Session::get('success') }}
+                                    </div>
+                                @endif
+                                <form id="contact-form" class="form" method="post" action="{{route('contact-us')}}" data-toggle="validator">
                                     <div class="messages"></div>
                                     <div class="input__wrap controls">
                                         <div class="form-group">
 
                                             <div class="entry">
                                                 <label>What's your name?</label>
-                                                <input id="form_name" type="text" name="name" placeholder="Type your name" required="required"
+                                                <input id="name" type="text" name="name" placeholder="Type your name" required="required"
                                                        data-error="name is required.">
                                             </div>
                                             <div class="help-block with-errors"></div>
@@ -66,7 +72,7 @@
                                         <div class="form-group">
                                             <div class="entry">
                                                 <label>What's your email address?</label>
-                                                <input id="form_email" type="email" name="email" placeholder="Type your Email Address"
+                                                <input id="email" type="email" name="email" placeholder="Type your Email Address"
                                                        required="required" data-error="Valid email is required.">
                                             </div>
                                             <div class="help-block with-errors"></div>
@@ -75,7 +81,7 @@
                                         <div class="form-group">
                                             <div class="entry">
                                                 <label>What's up?</label>
-                                                <textarea id="form_message" class="form-control" name="message"
+                                                <textarea id="form_message" class="form-control" name="subject"
                                                           placeholder="Tell us about you and the world" required="required"
                                                           data-error="Please,leave us a message."></textarea>
                                             </div>
@@ -83,7 +89,7 @@
                                         </div>
 
                                         <div class="image-zoom" data-dsn="parallax">
-                                            <button>Send Message</button>
+                                            <button type="submit">Send Message</button>
                                         </div>
                                     </div>
                                 </form>
@@ -93,33 +99,34 @@
                 </div>
             </div>
 
-            <section class="contact-up section-margin section-padding">
-                <div class="container">
-                    <div class="c-wapp">
-                        <a href="work.html" class="effect-ajax">
-                <span class="hiring">
-                  portfolio
-                </span>
-                            <span class="career">
-                  See More Works
-                </span>
-                        </a>
-                    </div>
-                </div>
-            </section>
+{{--            <section class="contact-up section-margin section-padding">--}}
+{{--                <div class="container">--}}
+{{--                    <div class="c-wapp">--}}
+{{--                        <a href="work.html" class="effect-ajax">--}}
+{{--                <span class="hiring">--}}
+{{--                  portfolio--}}
+{{--                </span>--}}
+{{--                            <span class="career">--}}
+{{--                  See More Works--}}
+{{--                </span>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </section>--}}
 
             <footer>
                 <div class="info">
                     <div class="contact-footer">
-                        <a href="tel:010" class="phone image-zoom" data-dsn="parallax">012.345.6789</a>
-                        <a href="#" class="email image-zoom" data-dsn="parallax">info@dsngrid</a>
+                        <a href="tel:+37493852929" class="phone image-zoom" data-dsn="parallax">+(374)93 85-29-29</a>
+                        <a href="tel:+37491852925" class="phone image-zoom" data-dsn="parallax">+(374)91 85-29-25</a>
+                        <a href="mailto:info@nessa.am" class="email image-zoom" data-dsn="parallax">info@nessa.am</a>
                     </div>
                     <div class="copyright-social">
-                        <p>© 2019 Design Grid</p>
+                        <p>© 2020 NESSA Design Studio</p>
                         <ul>
-                            <li class="image-zoom" data-dsn="parallax"><a href="#" target="_blank">Instagram</a></li>
-                            <li class="image-zoom" data-dsn="parallax"><a href="#" target="_blank">Facebook</a></li>
-                            <li class="image-zoom" data-dsn="parallax"><a href="#" target="_blank">Linkedin</a></li>
+                            <li class="image-zoom" data-dsn="parallax"><a href="https://www.instagram.com/nessadesignstudio/" target="_blank">Instagram</a></li>
+                            <li class="image-zoom" data-dsn="parallax"><a href="https://www.instagram.com/nessa_art_/" target="_blank">Instagram</a></li>
+                            <li class="image-zoom" data-dsn="parallax"><a href="https://www.facebook.com/profile.php?id=100010628236933" target="_blank">Facebook</a></li>
                         </ul>
                     </div>
                 </div>

@@ -133,49 +133,18 @@
 
                         <div class="custom-container">
                             <div class="slick-slider">
-                                <div class="team-item slick-slide">
-                                    <div class="box-img">
-                                        <img src="{{asset('/img/team/1.png')}}" alt="">
-                                    </div>
+                                @foreach($teams as $team)
+                                    <div class="team-item slick-slide">
+                                        <div class="box-img">
+                                            <img src="{{asset($team->image)}}" alt="">
+                                        </div>
 
-                                    <div class="box-content">
-                                        <h4>Blake Hamilton</h4>
-                                        <p>Project manager</p>
+                                        <div class="box-content">
+                                            <h4>{{$team->name}}</h4>
+                                            <p>{{$team->profession}}</p>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="team-item slick-slide">
-                                    <div class="box-img">
-                                        <img src="{{asset('/img/team/2.png')}}" alt="">
-                                    </div>
-
-                                    <div class="box-content">
-                                        <h4>Ahmed Shawky</h4>
-                                        <p>Web Designer</p>
-                                    </div>
-                                </div>
-
-                                <div class="team-item slick-slide">
-                                    <div class="box-img">
-                                        <img src="{{asset('/img/team/3.png')}}" alt="">
-                                    </div>
-
-                                    <div class="box-content">
-                                        <h4>John Doe</h4>
-                                        <p>Engineer</p>
-                                    </div>
-                                </div>
-
-                                <div class="team-item slick-slide">
-                                    <div class="box-img">
-                                        <img src="{{asset('/img/team/4.png')}}" alt="">
-                                    </div>
-
-                                    <div class="box-content">
-                                        <h4>Hesham Megahed</h4>
-                                        <p>Founder</p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -191,31 +160,17 @@
                         </div>
 
                         <div class="client-curs">
-                            <div class="client-item">
-                                <div>
-                                    <p>
-                                        Dave & his team at Blacksmith Agency were incredible partners
-                                        at a critical time for our company. Day in & day out, they
-                                        were there for us every step of the way delivering results for
-                                        us & our high profile corporate partner.
-                                    </p>
-                                    <h5>Brandon Barbello</h5>
-                                    <span>Vivalnk Inc | Google IO</span>
+                            @foreach($feedback as $feed)
+                                <div class="client-item">
+                                    <div>
+                                        <p>
+                                            {!!$feed->feedback!!}
+                                        </p>
+                                        <h5>{{$feed->name}}</h5>
+                                        <span>{{$feed->company}}</span>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="client-item">
-                                <div>
-                                    <p>
-                                        Dave & his team at Blacksmith Agency were incredible partners
-                                        at a critical time for our company. Day in & day out, they
-                                        were there for us every step of the way delivering results for
-                                        us & our high profile corporate partner.
-                                    </p>
-                                    <h5>Brandon Barbello</h5>
-                                    <span>Vivalnk Inc | Google IO</span>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </section>
@@ -230,153 +185,60 @@
                         </div>
 
                         <div class="wapper-client">
-                            <div class="logo-box">
-                                <img src="{{asset('/img/logo/1.png')}}" alt="">
+                            @foreach($clients as $client)
+                                <div class="logo-box">
+                                    <img src="{{asset($client->logo)}}" alt="">
 
-                                <div class="info">
-                                    <div class="content">
-                                        <div class="icon">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
+                                    <div class="info">
+                                        <div class="content">
+                                            <div class="icon">
+                                                <i class="fas fa-plus"></i>
+                                            </div>
 
-                                        <div class="entry">
-                                            <div>
-                                                <h5>Google</h5>
-                                                <a href="#">www.google.com</a>
+                                            <div class="entry">
+                                                <div>
+                                                    <h5>{{$client->client}}</h5>
+                                                    <a href="{{$client->link}}">{{$client->link}}</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="logo-box">
-                                <img src="{{asset('/img/logo/2.png')}}" alt="">
-
-                                <div class="info">
-                                    <div class="content">
-                                        <div class="icon">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-
-                                        <div class="entry">
-                                            <div>
-                                                <h5>Google</h5>
-                                                <a href="#">www.google.com</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="logo-box">
-                                <img src="{{asset('/img/logo/3.png')}}" alt="">
-
-                                <div class="info">
-                                    <div class="content">
-                                        <div class="icon">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-
-                                        <div class="entry">
-                                            <div>
-                                                <h5>Google</h5>
-                                                <a href="#">www.google.com</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="logo-box">
-                                <img src="{{asset('/img/logo/4.png')}}" alt="">
-
-                                <div class="info">
-                                    <div class="content">
-                                        <div class="icon">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-
-                                        <div class="entry">
-                                            <div>
-                                                <h5>Google</h5>
-                                                <a href="#">www.google.com</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="logo-box">
-                                <img src="{{asset('/img/logo/5.png')}}" alt="">
-
-                                <div class="info">
-                                    <div class="content">
-                                        <div class="icon">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-
-                                        <div class="entry">
-                                            <div>
-                                                <h5>Google</h5>
-                                                <a href="#">www.google.com</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="logo-box">
-                                <img src="{{asset('/img/logo/6.png')}}" alt="">
-
-                                <div class="info">
-                                    <div class="content">
-                                        <div class="icon">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-
-                                        <div class="entry">
-                                            <div>
-                                                <h5>Google</h5>
-                                                <a href="#">www.google.com</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </section>
 
             </div>
 
-            <section class="contact-up section-margin section-padding">
-                <div class="container">
-                    <div class="c-wapp">
-                        <a href="contact.html" class="effect-ajax">
-                                <span class="hiring">
-                                    We are hiring
-                                </span>
-                            <span class="career">
-                                    Dare and contact us immediately!
-                                </span>
-                        </a>
-                    </div>
-                </div>
-            </section>
+            {{--            <section class="contact-up section-margin section-padding">--}}
+            {{--                <div class="container">--}}
+            {{--                    <div class="c-wapp">--}}
+            {{--                        <a href="contact.html" class="effect-ajax">--}}
+            {{--                                <span class="hiring">--}}
+            {{--                                    We are hiring--}}
+            {{--                                </span>--}}
+            {{--                            <span class="career">--}}
+            {{--                                    Dare and contact us immediately!--}}
+            {{--                                </span>--}}
+            {{--                        </a>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </section>--}}
 
             <footer>
                 <div class="info">
                     <div class="contact-footer">
-                        <a href="tel:010" class="phone image-zoom" data-dsn="parallax">012.345.6789</a>
-                        <a href="#" class="email image-zoom" data-dsn="parallax">info@dsngrid</a>
+                        <a href="tel:+37493852929" class="phone image-zoom" data-dsn="parallax">+(374)93 85-29-29</a>
+                        <a href="tel:+37491852925" class="phone image-zoom" data-dsn="parallax">+(374)91 85-29-25</a>
+                        <a href="mailto:info@nessa.am" class="email image-zoom" data-dsn="parallax">info@nessa.am</a>
                     </div>
                     <div class="copyright-social">
-                        <p>© 2019 Design Grid</p>
+                        <p>© 2020 NESSA Design Studio</p>
                         <ul>
-                            <li class="image-zoom" data-dsn="parallax"><a href="#" target="_blank">Instagram</a>
-                            </li>
-                            <li class="image-zoom" data-dsn="parallax"><a href="#" target="_blank">Facebook</a></li>
-                            <li class="image-zoom" data-dsn="parallax"><a href="#" target="_blank">Linkedin</a></li>
+                            <li class="image-zoom" data-dsn="parallax"><a href="https://www.instagram.com/nessadesignstudio/" target="_blank">Instagram</a></li>
+                            <li class="image-zoom" data-dsn="parallax"><a href="https://www.instagram.com/nessa_art_/" target="_blank">Instagram</a></li>
+                            <li class="image-zoom" data-dsn="parallax"><a href="https://www.facebook.com/profile.php?id=100010628236933" target="_blank">Facebook</a></li>
                         </ul>
                     </div>
                 </div>

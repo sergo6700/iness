@@ -24,7 +24,9 @@ class UpdatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'category_id' => 'required'
+            'category_id'           => 'required',
+            'project_title'         => 'required',
+            'project_description'   => 'required',
         ];
     }
 }
